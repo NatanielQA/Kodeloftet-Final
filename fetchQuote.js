@@ -1,7 +1,13 @@
 async function fetchAndDisplayQuote() {
     try {
-        // Fetch the quote from the API
-        const response = await fetch('https://zenquotes.io/api/quotes/');
+        // Proxy server URL
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+        // Original API URL
+        const apiUrl = 'https://zenquotes.io/api/quotes/';
+
+        // Fetch the quote through the proxy server
+        const response = await fetch(proxyUrl + apiUrl);
 
         // Check if response is successful
         if (!response.ok) {
