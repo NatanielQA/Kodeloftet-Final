@@ -1,26 +1,20 @@
 async function fetchAndDisplayQuote() {
     try {
-        // Proxy server URL
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-
-        // Original API URL
-        const apiUrl = 'https://zenquotes.io/api/quotes/';
-
-        // Fetch the quote through the proxy server
-        const response = await fetch(proxyUrl + apiUrl);
+        // Fetch the quote from the API
+        const response = await fetch('https://catfact.ninja/facts');
 
         // Check if response is successful
         if (!response.ok) {
             throw new Error('Failed to fetch quote');
         }
 
-        // Parse JSON response
+        // Parseing JSON response
         const data = await response.json();
 
-        // Extract quote text
-        const quoteText = data[0].q;
+        // Extracting quote text
+        const quoteText = data.data[0].fact;
 
-        // Display quote
+        // Displaying quote
         document.getElementById('quoteContainer').textContent = quoteText;
     } catch (error) {
         // Log and handle errors

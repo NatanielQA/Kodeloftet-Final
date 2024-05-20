@@ -4,8 +4,10 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-color: #e3f2fd; /* Light blue background color */
 }
 
 #quoteContainer {
   text-align: center;
+  padding: 20px; /* Add padding for better readability */
 }
